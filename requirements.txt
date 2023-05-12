@@ -1,0 +1,7 @@
+imutils
+dlib
+numpy
+opencv-python
+scipy
+requests
+pillow
