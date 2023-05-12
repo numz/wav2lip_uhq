@@ -74,11 +74,18 @@ following parameters could drastically change the result:
 - mask_blur (0 - 50) default 8
 - alwayson_scripts > controlnet > args > threshold_a (1 - 32) default 1
 - alwayson_scripts > controlnet > args > threshold_b (1 - 32) default 32
+- inpainting_fill (0 - 3) default 2, 0 = fill, 1 = original, 2 = latent noise, 3 = latent nothing
+- steps (1 - 100) default 30, number of steps for diffusion
 
 ## alternative usage
 if you set `-p` or `--post_process` to "False", the script will only create images and masks. you can then use those folders in automatic1111 webui in img2img Batch mode:
 ![Illustration](temp/img2img.png)
 It will give you more control over the result
+
+## Quality tips
+- use a high quality video as input
+- use a high quality model in stable diffusion webui like [delibarate_v2](https://civitai.com/models/4823/deliberate)
+- play with the payload parameters
 
 ## Contributing
 
