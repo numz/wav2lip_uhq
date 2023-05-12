@@ -76,7 +76,7 @@ following parameters could drastically change the result:
 - alwayson_scripts > controlnet > args > threshold_b (1 - 32) default 32
 
 ## alternative usage
-if you set `-p` or `--post_process` to "False", the script will only create images and masks. you can then you those folders to use in automatic1111 webui in img2img Batch mode:
+if you set `-p` or `--post_process` to "False", the script will only create images and masks. you can then use those folders in automatic1111 webui in img2img Batch mode:
 ![Illustration](temp/img2img.png)
 It will give you more control over the result
 
