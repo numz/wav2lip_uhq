@@ -3,7 +3,7 @@
   "payload": {
     "init_images": [],
     "resize_mode": 0,
-    "denoising_strength": 0.25,
+    "denoising_strength": 0.35,
     "mask": "",
     "prompt": "",
     "negative_prompt": "",

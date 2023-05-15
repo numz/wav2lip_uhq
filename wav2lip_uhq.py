@@ -147,7 +147,7 @@ def main():
 
             cv2.fillConvexPoly(mask, np.array(external_mouth_shape_extended), (255, 255, 255))
             mask_blur = cv2.GaussianBlur(mask, (15, 15), 0)
-            cv2.imwrite(mask_path + 'mask_' + str(frame_number).rjust(5, '0') + '.png', mask_blur)
+            cv2.imwrite(mask_path + 'image_' + str(frame_number).rjust(5, '0') + '.png', mask_blur)
 
             mask_blur = mask_blur / 255
             dst = img * mask_blur
@@ -155,7 +155,7 @@ def main():
 
             height, width, _ = result.shape
             image_name = image_path + 'image_' + str(frame_number).rjust(5, '0') + '.png'
-            mask_name = mask_path + 'mask_' + str(frame_number).rjust(5, '0') + '.png'
+            mask_name = mask_path + 'image_' + str(frame_number).rjust(5, '0') + '.png'
             cv2.imwrite(image_name, result)
             if args["post_process"] == "True":
                 create_image(image_name, mask_name, payload, (width, height), frame_number)
