@@ -25,10 +25,10 @@ def get_framerate(video_file):
     return fps
 
 
-def create_video_from_images(args):
+def create_video_from_images(args, nb_frames):
     fps = str(get_framerate(args["input_file"]))
     subprocess.run(
-        ["ffmpeg", "-y", "-framerate", fps, "-start_number", "1", "-i", "output/output_%05d.png", "-vframes", "513",
+        ["ffmpeg", "-y", "-framerate", fps, "-start_number", "1", "-i", "output/output_%05d.png", "-vframes", nb_frames,
          "-b:v", "5000k", "output/video.avi"])
 
 
@@ -167,7 +167,7 @@ def main():
     vi.release()
     if args["post_process"] == "True":
         print("[INFO] Create Video output!")
-        create_video_from_images(args)
+        create_video_from_images(args, frame_number-1)
         if has_audio(args["file"]):
             print("[INFO] Extract Audio from input!")
             extract_audio_from_video(args)
