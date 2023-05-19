@@ -28,7 +28,7 @@ def get_framerate(video_file):
 def create_video_from_images(args, nb_frames):
     fps = str(get_framerate(args["input_file"]))
     subprocess.run(
-        ["ffmpeg", "-y", "-framerate", fps, "-start_number", "1", "-i", "output/output_%05d.png", "-vframes", nb_frames,
+        ["ffmpeg", "-y", "-framerate", fps, "-start_number", "1", "-i", "output/output_%05d.png", "-vframes", str(nb_frames),
          "-b:v", "5000k", "output/video.avi"])
 
 
